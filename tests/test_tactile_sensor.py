@@ -72,7 +72,7 @@ def test_depth_matches_sphere_distance(pressed):
   taxels = sensor.taxel_pos_w()[0]
   expected = (RADIUS - (taxels - center).norm(dim=-1)).clamp(min=0).view(5, 5)
   depth = sensor.data.depth[0]
-  assert depth[2, 2] == pytest.approx(PRESS, abs=1e-6)
+  assert depth[2, 2].item() == pytest.approx(PRESS, abs=1e-6)
   torch.testing.assert_close(depth, expected, atol=1e-6, rtol=0)
 
 
