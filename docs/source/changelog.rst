@@ -57,6 +57,8 @@ Changed
   through pixel centers), matching ``CameraSensor``. Previously the image was flipped.
 - Bumped ``mujoco`` and ``mujoco-warp`` from 3.11 to 3.16 and raised the
   ``warp-lang`` floor to 1.15.
+- Raised the ``warp-lang`` floor to 1.17 and locked 1.19.0, so mjlab installs in the
+  same environment as cuPIQP, which requires ``warp-lang>=1.17``.
 - ``BuiltinDcMotorActuatorCfg`` PID gains are now in torque space, following
   MuJoCo 3.14. VELOCITY mode requires ``damping > 0`` and ``stiffness = 0``, and
   VOLTAGE mode rejects ``voltage_limit`` and ``slew_rate``.
